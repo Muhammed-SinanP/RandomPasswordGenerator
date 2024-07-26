@@ -40,9 +40,10 @@
       id="main"
       class="w-72 mx-auto p-2 tracking-wider flex flex-col gap-4"
     >
-      <label for="charLength" class="text-lg font-normal">Password characters length:
-        <div class="font-bold inline text-xl text-blue-600" id="charLengthDisplay">8</div>
+      <label for="charLength" class="text-lg font-normal">Password length:
+        <span class="font-semibold text-2xl text-blue-600" id="charLengthDisplay">8</span>
       </label>
+      
       <div class="text-center flex gap-4">
         <span><ion-icon name="remove-outline" class="valBtn" id="minusBtn"></ion-icon></span>
         <input id="charLength" type="range" min="4" max="20" value="8" class="w-40"/>
@@ -103,7 +104,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="submitBtn" onclick="generatePassword()">Get Password</button>
+        <button class="submitBtn" onclick="generatePassword()">Get New Password</button>
       </div>
 
       <fieldset class="border-2 border-blue-400 pl-2">

@@ -1,3 +1,4 @@
+const charLength = document.getElementById('charLength');
 let display = document.getElementById("charLengthDisplay");
 let add = document.getElementById("plusBtn");
 let sub = document.getElementById("minusBtn");
@@ -20,6 +21,13 @@ const listSymbols = "!@#$&*_";
 
 
 
+charLength.addEventListener('input', () => {
+    
+    const newValue = charLength.value;
+    if (charLengthDisplay.textContent !== newValue) {
+      charLengthDisplay.textContent = newValue;
+    }
+  });
 
 
 
@@ -31,19 +39,18 @@ const listSymbols = "!@#$&*_";
 add.addEventListener("click",() => {
     if(charLength.value < 20){
         charLength.value++; 
+        charLengthDisplay.textContent = charLength.value;
     }
 });
 
 sub.addEventListener("click",() => {
     if(charLength.value > 4){
         charLength.value--;
+        charLengthDisplay.textContent = charLength.value;
     }
 })
 
-setInterval(() => {
-    display.innerText = charLength.value;
 
-}, 100);
 
 
 function generatePassword(){
