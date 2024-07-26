@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenPass</title>
+    <link rel="icon" type="image/png" href="./public/images/lock.png" />
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <body class="h-screen">
+    <section id="navbar" class="nav">
+      <div class="flex gap-2 items-center ml-1">
+        <img src="./public/images/logo.png" class="w-12" />
+        <p class="text-2xl font-bold text-blue-500 hidden sm:block">
+          GenPass
+        </p>
+      </div>
+      <div class="mr-2 ">
+        <label for="toggle" class="toggle cursor-pointer">
+          <input type="checkbox" id="toggle" class="hidden peer" value="" />
+          <div class="toggleBtn"></div>
+        </label>
+      </div>
+    </section>
+
+    <section
+      id="heading"
+      class="flex flex-col justify-center items-center gap-4 py-2 my-2 text-center"
+    >
+      <h1 class="text-4xl font-bold tracking-wide text-blue-500 text-opacity-100">
+        Random Password Generator
+      </h1>
+      <h2 class="text-gray-900 font-semibold tracking-wide">
+        Create strong and secure passwords to keep your account safe online.
+      </h2>
+      <img src="./public/images/protection.png" class="m-auto w-40" />
+    </section>
+
+    <section
+      id="main"
+      class="w-72 mx-auto p-2 tracking-wider flex flex-col gap-4"
+    >
+      <label for="charLength" class="text-lg font-normal">Password characters length:
+        <span class="font-bold text-xl text-blue-600" id="charLengthDisplay">8</span>
+      </label>
+      <div class="text-center flex gap-4">
+        <span><ion-icon name="remove-outline" class="valBtn" id="minusBtn"></ion-icon></span>
+        <input id="charLength" type="range" min="4" max="20" value="8" class="w-40"/>
+        <span><ion-icon name="add-outline" class="valBtn" id="plusBtn"></ion-icon></span>
+      </div>
+      <p class="text-lg font-normal">Include characters :-</p>
+      <div class="ml-2 pl-2">
+        <div class="font-bold">
+          <input
+            type="checkbox"
+            id="alphabets"
+            name="alphabets"
+            value="alphabets"
+            class="peer"
+            checked
+          />
+          <label for="alphabets">Alphabets ABCabc</label><br />
+          <div class="ml-2 hidden pl-2 font-semibold peer-checked:block
+        ">
+          <input
+            type="radio"
+            id="upperCase"
+            name="case"
+            value="Only Uppercase"
+          />
+          <label for="upperCase">Only Uppercase</label><br />
+          <input
+            type="radio"
+            id="lowerCase"
+            name="case"
+            value="Only Uppercase"
+          />
+          <label for="lowerCase">Only Lowercase</label><br />
+          <input type="radio" id="bothCase" name="case" value="Both" checked />
+          <label for="bothCase">Both</label><br />
+        </div>
+        </div>
+        
+        <div class="font-bold">
+          <input
+            type="checkbox"
+            id="numbers"
+            name="numbers"
+            value="numbers"
+            checked
+          />
+          <label for="numbers">Numbers 123</label><br />
+        </div>
+        <div class="font-bold">
+          <input
+            type="checkbox"
+            id="symbols"
+            name="symbols"
+            value="symbols"
+            checked
+          />
+          <label for="symbols">Symbols</label><br />
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="submitBtn" onclick="generatePassword()">Get Password</button>
+      </div>
+
+      <fieldset class="border-2 border-blue-400 pl-2">
+        <legend class="text-blue-500 font-semibold text-lg">
+          Generated Password
+        </legend>
+
+        <p
+          class="w-72 text-nowrap overflow-hidden overflow-ellipsis tracking-wider text-2xl font-semibold" id="displayPassword"
+        >
+          00000000
+        </p>
+
+      </fieldset>
+
+      <div class="text-center gap-2">
+        <button class="btn btnCopy" onclick="copy()">Copy</button>
+
+        <button class="btn btnClear" onclick="reload()">Clear</button>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="pt-20 pb-6 mt-10 bg-blue-500">
+        <p class="text-center text-gray-400">Be safe, be secure</p>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./public/index.js"></script>
+  </body>
+</html>
